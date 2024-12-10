@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание Тренировок | Кинологический Клуб "Лучший Питомец"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" width="100" height="100">
+        </div>
+        <div class="nav-container">
+            <h1 id='main'>Кинологический клуб "Лучший питомец"</h1>
+            <nav>
+                <a href="index.html#home">Главная</a>
+                <a href="schedule.html">Расписание</a>
+                <a href="consultations.html">Консультации</a>
+            </nav>
+        </div>
+        <div class="profile">
+            <button class="register-btn" onclick="location.href='register.html'">Зарегистрироваться</button>
+            <img src="img/profil.jpg" alt="Профиль">
+        </div>
+    </header>
+
+    <div class="container schedule">
+        <h2>Расписание Тренировок</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Время</th>
+                    <th>Понедельник</th>
+                    <th>Вторник</th>
+                    <th>Среда</th>
+                    <th>Четверг</th>
+                    <th>Пятница</th>
+                    <th>Суббота</th>
+                    <th>Воскресенье</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>09:00 - 10:00</td>
+                    <td>розыскная</td>
+                    <td>-</td>
+                    <td>защитно-караульная</td>
+                    <td>-</td>
+                    <td>поисково-спасательная</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>10:30 - 11:30</td>
+                    <td>общий курс дрессировки</td>
+                    <td>-</td>
+                    <td>поисково-спасательная</td>
+                    <td>-</td>
+                    <td>защитно-караульная</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>12:00 - 13:00</td>
+                    <td>-</td>
+                    <td>общий курс дрессировки</td>
+                    <td>-</td>
+                    <td>поисково-спасательная</td>
+                    <td>-</td>
+                    <td>общий курс дрессировки</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>13:30 - 14:30</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>общий курс дрессировки</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>15:00 - 16:00</td>
+                    <td>поисково-спасательная</td>
+                    <td>-</td>
+                    <td>общий курс дрессировки</td>
+                    <td>-</td>
+                    <td>розыскная</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>16:30 - 17:30</td>
+                    <td>-</td>
+                    <td>розыскная</td>
+                    <td>-</td>
+                    <td>общий курс дрессировки</td>
+                    <td>-</td>
+                    <td>защитно-караульная</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container registration-form">
+        <h2>Записаться на Тренировку</h2>
+        <form id="registrationForm">
+            <input type="text" id="name" placeholder="Ваше имя" required>
+            <input type="email" id="email" placeholder="Ваш email" required>
+            <select id="training" placeholder="Выберите тренировку" required>
+                <option value="">Выберите тренировку</option>
+                <option value="yoga">общий курс дрессировки</option>
+                <option value="strength-training">поисково-спасательная</option>
+                <option value="swimming">розыскная</option>
+                <option value="crossfit">защитно-караульная</option>
+            </select>
+            <textarea id="message" placeholder="Комментарий (не обязательно)"></textarea>
+            <input type="submit" value="Записаться">
+        </form>
+        <script>
+            document.getElementById('registrationForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                alert('Спасибо за заявку! Мы свяжемся с вами в ближайшее время.');
+                this.reset();
+            });
+        </script>
+    </div>
+
+    <footer class="footer">
+        <div class="column">
+            <h3>Наш адрес</h3>
+            <p>Мясницкий пр-д, 4/3, Москва, 107078</p>
+            <a href="#">Схема проезда</a>
+        </div>
+        <div class="column">
+            <h3>Часы работы</h3>
+            <p>Понедельник - Суббота<br>09:00 - 17:30</p>
+            <p>Воскресенье<br>Выходной</p>
+        </div>
+        <div class="column">
+            <h3>Контакты</h3>
+            <p class="contacts">📞 +7 (999) 123-45-67</p>
+            <p class="contacts">📧 <a href="mailto:test@example.com">info@bestpetclub.ru</a></p>
+            <p>Если у вас есть какие-либо вопросы, не стесняйтесь обращаться к нам напрямую!</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/vk-circled.png" alt="VK"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="qr-code">
+            <h3>Сканируйте QR-код</h3>
+            <img src="img/qrcode.png" alt="QR-код сайта">
+        </div>
+        <div class="copyright">
+            Copyright © 2021 - 2024 Кинологический Клуб "Лучший Питомец<br>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Консультации | Кинологический Клуб "Лучший Питомец"</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" width="100" height="100">
+        </div>
+        <div class="nav-container">
+            <h1 id='main'>Кинологический клуб "Лучший питомец"</h1>
+            <nav>
+                <a href="index.html#home">Главная</a>
+                <a href="schedule.html">Расписание</a>
+                <a href="consultations.html">Консультации</a>
+            </nav>
+        </div>
+        <div class="profile">
+            <button class="register-btn" onclick="location.href='register.html'">Зарегистрироваться</button>
+            <img src="img/profil.jpg" alt="Профиль">
+        </div>
+    </header>
+
+    <div class="container consultations">
+        <h2>Консультации</h2>
+        <div class="consultation-item">
+            <img src="img/foto1.jpg" alt="Консультант 1">
+            <div class="content">
+                <h3>Иван Иванов</h3>
+                <p>Опытный кинолог с более чем 10 лет работы.</p>
+                <p class="price">Цена: 1500 руб.</p>
+                <button onclick="openModal('ivan')">Записаться</button>
+            </div>
+        </div>
+        <div class="consultation-item">
+            <img src="img/foto2.jpeg" alt="Консультант 2">
+            <div class="content">
+                <h3>Мария Петрова</h3>
+                <p>Профессиональный тренер по поведению собак.</p>
+                <p class="price">Цена: 1800 руб.</p>
+                <button onclick="openModal('maria')">Записаться</button>
+            </div>
+        </div>
+        <div class="consultation-item">
+            <img src="img/foto3.jpg" alt="Консультант 3">
+            <div class="content">
+                <h3>Алексей Смирнов</h3>
+                <p>Эксперт по обучению командам собак.</p>
+                <p class="price">Цена: 1600 руб.</p>
+                <button onclick="openModal('aleksei')">Записаться</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Запись на Консультацию</h2>
+            <form id="consultationForm">
+                <input type="text" id="name" placeholder="Ваше ФИО" required>
+                <input type="email" id="email" placeholder="Ваш email" required>
+                <input type="hidden" id="consultant" name="consultant">
+                <input type="submit" value="Записаться">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(consultant) {
+            document.getElementById('myModal').style.display = 'block';
+            document.getElementById('consultant').value = consultant;
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        document.getElementById('consultationForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const consultant = document.getElementById('consultant').value;
+            alert(`Спасибо за заявку, ${name}! Мы свяжемся с вами в ближайшее время для консультации с ${consultant}.`);
+            closeModal();
+            this.reset();
+        });
+    </script>
+
+    <footer class="footer">
+        <div class="column">
+            <h3>Наш адрес</h3>
+            <p>Мясницкий пр-д, 4/3, Москва, 107078</p>
+            <a href="#">Схема проезда</a>
+        </div>
+        <div class="column">
+            <h3>Часы работы</h3>
+            <p>Понедельник - Суббота<br>09:00 - 17:30</p>
+            <p>Воскресенье<br>Выходной</p>
+        </div>
+        <div class="column">
+            <h3>Контакты</h3>
+            <p class="contacts">📞 +7 (999) 123-45-67</p>
+            <p class="contacts">📧 <a href="mailto:test@example.com">info@bestpetclub.ru</a></p>
+            <p>Если у вас есть какие-либо вопросы, не стесняйтесь обращаться к нам напрямую!</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/vk-circled.png" alt="VK"></a>
+                <a href="#"><img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram"></a>
+            </div>
+        </div>
+        <div class="qr-code">
+            <h3>Сканируйте QR-код</h3>
+            <img src="img/qrcode.png" alt="QR-код сайта">
+        </div>
+        <div class="copyright">
+            Copyright © 2021 - 2024 Кинологический Клуб "Лучший Питомец<br>
+        </div>
+    </footer>
+
+</body>
+</html>
